@@ -7,6 +7,7 @@ import CheckoutPage from "../pages/CheckoutPage.jsx";
 import OrderSummaryPage from "../pages/OrderSummaryPage.jsx";
 import NotFoundPage from "../pages/NotFoundPage.jsx";
 import PaymentProcessingPage from "../pages/PaymentProcessingPage.jsx";
+import WishlistPage from "../pages/WishlistPage.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: "checkout", element: <CheckoutPage /> },
       { path: "order-summary", element: <OrderSummaryPage /> },
       { path: "payment-processing", element: <PaymentProcessingPage /> },
+      { path: "wishlist", element: <WishlistPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

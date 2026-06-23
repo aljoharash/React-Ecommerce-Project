@@ -1,3 +1,29 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../ui/LoadingSpinner.jsx";
+
 export default function PaymentProcessingPage() {
-    return <h1>Payment Processing Page</h1>;
-  }
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/order-summary");
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
+  return (
+    <div className="flex min-h-[70vh] flex-col items-center justify-center text-center">
+      <LoadingSpinner />
+
+      <h1 className="mt-6 text-3xl font-bold text-slate-900">
+        Processing Payment
+      </h1>
+
+      <p className="mt-3 max-w-md text-slate-500">
+        Please wait while we confirm your payment. Do not close this page.
+      </p>
+    </div>
+  );
+}

@@ -41,3 +41,8 @@ export async function getProductById(id) {
     throw error;
   }
 }
+
+export async function getCategories() {
+  const response = await fetch(`${BASE_URL}/products/categories`);
+  return handleResponse(response, "Failed to fetch categories");
+}

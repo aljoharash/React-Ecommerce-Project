@@ -1,21 +1,14 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import AppHeader from "./AppHeader";
 
 export default function RootLayout() {
   return (
-    <>
-      <header>
-        <Link to="/">
-          <h1>React Store</h1>
-        </Link>
+    <div className="min-h-screen bg-slate-50">
+      <AppHeader />
 
-        <Link to="/cart">
-          Cart
-        </Link>
-      </header>
-
-      <main>
+      <main className="mx-auto max-w-7xl px-6 py-8">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
