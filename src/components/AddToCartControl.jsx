@@ -18,7 +18,7 @@ export default function AddToCartControl({ product }) {
   return (
     <div className="mt-4 space-y-3">
       <div className="flex items-center justify-center">
-        <div className="flex items-center rounded-lg border border-slate-300">
+        <div className="overflow-hidden flex items-center rounded-lg border border-slate-300">
           <button
             onClick={decreaseQuantity}
             className="px-3 py-2 transition hover:bg-slate-100"

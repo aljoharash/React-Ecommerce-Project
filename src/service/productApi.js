@@ -1,5 +1,12 @@
 const BASE_URL = "https://fakestoreapi.com";
 
+/**
+ * Product API service.
+ *
+ * Responsible for communicating with the Fake Store API
+ * and returning product data to the application.
+ */
+
 async function handleResponse(response, errorMessage) {
   console.log("API Response:", response);
 

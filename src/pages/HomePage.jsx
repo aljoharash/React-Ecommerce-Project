@@ -6,6 +6,7 @@ import ProductGrid from "../components/ProductGrid.jsx";
 import ProductGridSkeleton from "../components/ProductGridSkeleton.jsx";
 
 import { getProducts, getCategories } from "../service/productApi.js";
+import NotFoundPage from "./NotFoundPage.jsx";
 
 const PRODUCTS_PER_PAGE = 12;
 
@@ -105,7 +106,7 @@ export default function HomePage() {
   }
 
   if (error) {
-    return <p className="text-red-600">Error: {error}</p>;
+    return <NotFoundPage />;
   }
 
   return (

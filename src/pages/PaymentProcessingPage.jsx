@@ -1,17 +1,20 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../ui/LoadingSpinner.jsx";
+import { useCart } from "../context/CartContext.jsx";
 
 export default function PaymentProcessingPage() {
   const navigate = useNavigate();
+  const { clearCart } = useCart();
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      clearCart();
       navigate("/order-summary");
     }, 4000);
 
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, [clearCart, navigate]);
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center text-center">
